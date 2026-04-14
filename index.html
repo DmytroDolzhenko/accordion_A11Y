@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна робота: Доступний акордеон</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main>
+        <h1>Програмування доступних акордеонів</h1>
+        <div class="accordion" id="accordion-group">
+            <div class="accordion-item">
+                <h3>
+                    <button id="acc-btn-1"
+                            class="accordion-trigger"
+                            aria-expanded="false"
+                            aria-controls="acc-panel-1">
+                        Секція 1: Загальна інформація
+                    </button>
+                </h3>
+                <div id="acc-panel-1"
+                     class="accordion-panel"
+                     role="region"
+                     aria-labelledby="acc-btn-1"
+                     hidden>
+                    <p>Тут розміщується контент першої секції...</p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h3>
+                    <button id="acc-btn-2"
+                            class="accordion-trigger"
+                            aria-expanded="false"
+                            aria-controls="acc-panel-2">
+                        Секція 2: Атрибути стану
+                    </button>
+                </h3>
+                <div id="acc-panel-2"
+                     class="accordion-panel"
+                     role="region"
+                     aria-labelledby="acc-btn-2"
+                     hidden>
+                    <p>Атрибут повідомляє чи розгорнутий контент у даний момент</p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h3>
+                    <button id="acc-btn-3"
+                            class="accordion-trigger"
+                            aria-expanded="false"
+                            aria-controls="acc-panel-3">
+                        Секція 3: Навігація клавіатурою
+                    </button>
+                </h3>
+                <div id="acc-panel-3"
+                     class="accordion-panel"
+                     role="region"
+                     aria-labelledby="acc-btn-3"
+                     hidden>
+                    <p>Можна перемикати фокус між заголовками акордеона за допомогою клавіш стрілок не проходячи крізь внутрішній контент</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
