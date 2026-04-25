@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div role="tablist">
+    <button id="tab1" class="button" role="tab" aria-selected="true" aria-controls="panel1">Tab 1</button>
+    <button id="tab2" class="button" role="tab" aria-selected="false" aria-controls="panel2">Tab 2</button>
+    <button id="tab3" class="button" role="tab" aria-selected="false" aria-controls="panel3">Tab 3</button>
+</div>
+
+<div id="panel1" role="tabpanel" aria-labelledby="tab1">
+    <p>Content for Tab 1</p>
+</div>
+<div id="panel2" role="tabpanel" aria-labelledby="tab2" hidden>
+    <p>Content for Tab 2</p>
+</div>
+<div id="panel3" role="tabpanel" aria-labelledby="tab3" hidden>
+    <p>Content for Tab 3</p>
+</div>
+    <script src="script.js"></script>
+</body>
+</html>
