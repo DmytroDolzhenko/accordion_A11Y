@@ -1,0 +1,77 @@
+:root {
+    --primary-color: #007bff;
+    --track-color: #e0e0e0;
+    --focus-outline: #ff9800;
+}
+
+body {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    background-color: #f4f4f9;
+}
+
+.container {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    width: 350px;
+}
+
+.control-group {
+    margin-bottom: 30px;
+}
+
+.label {
+    display: block;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #333;
+}
+
+.slider-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.slider-track {
+    flex-grow: 1;
+    height: 8px;
+    background: var(--track-color);
+    border-radius: 4px;
+    position: relative;
+    cursor: pointer;
+}
+
+.slider-fill {
+    height: 100%;
+    background: var(--primary-color);
+    width: 50%;
+    border-radius: 4px;
+}
+
+.slider-thumb {
+    width: 24px;
+    height: 24px;
+    background: white;
+    border: 3px solid var(--primary-color);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: box-shadow 0.1s;
+    cursor: grab;
+}
+
+.slider-thumb:active {
+    cursor: grabbing;
+}
+
+.slider-thumb:focus {
+    outline: 3px solid var(--focus-outline);
+    outline-offset: 4px;
+}

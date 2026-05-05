@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Практична робота 10. Кастомні слайдери та перемикач</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="container">
+        <h1>Керування аудіо</h1>
+        <div class="control-group">
+            <label id="volume-label" class="label">Рівень гучності</label>
+            <div class="slider-wrapper">
+                <div class="slider-track" id="track">
+                    <div 
+                        id="volume-slider"
+                        role="slider"
+                        tabindex="0"
+                        aria-labelledby="volume-label"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                        aria-valuenow="50"
+                        aria-valuetext="50 відсотків"
+                        class="slider-thumb">
+                    </div>
+                    <div class="slider-fill" id="fill"></div>
+                </div>
+                <span class="value-indicator" aria-hidden="true">50%</span>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
