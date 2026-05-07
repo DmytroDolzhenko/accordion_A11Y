@@ -1,0 +1,137 @@
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.button[aria-selected="true"] {
+    background-color: #a27217;
+}
+
+/* --- СТИЛІ МОДАЛЬНОГО ВІКНА --- */
+
+/* Контейнер модалки (Оверлей) */
+#modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Напівпрозорий чорний фон */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(4px); /* Ефект розмиття фону */
+}
+
+/* Коли додано атрибут hidden, браузер сам приховає елемент, 
+   але ми можемо перестрахуватися: */
+#modal-container[hidden] {
+    display: none;
+}
+
+/* Сама картка модального вікна */
+.modal-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 450px;
+    position: relative;
+    animation: slideIn 0.3s ease-out; /* Анімація появи */
+}
+
+/* Заголовок модалки */
+#modal-title {
+    margin-top: 0;
+    color: #333;
+    font-size: 1.5rem;
+}
+
+#modal-description {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+/* Стилізація форми всередині */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-weight: bold;
+    font-size: 0.85rem;
+    color: #444;
+    margin-bottom: -10px;
+}
+
+input[type="text"],
+input[type="email"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+input:focus {
+    outline: 2px solid #4CAF50; 
+    border-color: transparent;
+}
+
+/* Група кнопок */
+.button-group {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+#save-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#close-btn {
+    background-color: #f1f1f1;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#close-btn:hover {
+    background-color: #e0e0e0;
+}
+
+/* Блокування прокрутки body */
+body.modal-open {
+    overflow: hidden;
+}
+
+/* Анімація */
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
