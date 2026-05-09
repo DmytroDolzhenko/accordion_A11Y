@@ -7,25 +7,31 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Оновлено до v4 (підтримує Node.js 24)
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
+      # Оновлено до v4 (підтримує Node.js 24)
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20' # Можна залишити 20 або змінити на 22+
 
       - name: Install dependencies
+        working-directory: ./LAB12
         run: npm install
 
       - name: Build project
+        working-directory: ./LAB12
         run: npm run build
 
       - name: Start server in background
+        working-directory: ./LAB12
         run: npm run preview & 
         
       - name: Wait for server
         run: npx wait-on http://localhost:4173
 
       - name: Run Accessibility Tests
+        working-directory: ./LAB12
         run: npx pa11y-ci
