@@ -1,0 +1,30 @@
+name: Accessibility Check
+
+on: [push, pull_request]
+
+jobs:
+  accessibility:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/node-latest@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build
+
+      - name: Start server in background
+        run: npm run preview & 
+      - name: Wait for server
+        run: npx wait-on http://localhost:4173
+
+      - name: Run Accessibility Tests
+        run: npx pa11y-ci
