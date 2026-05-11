@@ -1,0 +1,14 @@
+{
+  "defaults": {
+    "timeout": 5000,
+    "wait": 1000,
+    "chromeLaunchConfig": {
+      "args": ["--no-sandbox"]
+    }
+  },
+  "urls": [
+    "http://localhost:4173/",
+    "http://localhost:4173/products",
+    "http://localhost:4173/contact"
+  ]
+}

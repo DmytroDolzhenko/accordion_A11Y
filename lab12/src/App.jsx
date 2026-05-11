@@ -72,7 +72,7 @@ function Products({ showToast }) {
 }
 
 function Contact({ showToast }) {
-  // Стан для зберігання помилок
+
   const [errors, setErrors] = useState({ name: "", email: "" });
 
   const handleSubmit = (event) => {
